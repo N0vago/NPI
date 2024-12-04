@@ -17,7 +17,7 @@ namespace CodeBase.Services.Scene
                 return;
             }
             
-            AsyncOperation waitNextScene = SceneManager.LoadSceneAsync(SceneManager.GetSceneByBuildIndex(sceneIndex).name);
+            AsyncOperation waitNextScene = SceneManager.LoadSceneAsync(sceneIndex);
             while (!waitNextScene.isDone)
             {
                 await UniTask.Yield();
